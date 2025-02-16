@@ -12,7 +12,8 @@ remove : 54.66 ns/op
 */
 
 // change this to my implementation
-var hashImplementation Hashable = BuiltinMapConstructor()
+// var hashImplementation Hashable = BuiltinMapConstructor()
+var hashImplementation Hashable = MyMapConstructor()
 
 func TestSetGetRemove(t *testing.T) {
 	arr := getRandArr(10)
@@ -38,6 +39,28 @@ func TestSetGetRemove(t *testing.T) {
 		_, ok := hashImplementation.Get(v)
 		if ok {
 			t.Errorf("found deleted key %d", v)
+		}
+	}
+
+}
+
+func TestSetGet(t *testing.T) {
+	cases := []struct {
+		key int
+		val int
+	}{
+		{key: 23, val: 203},
+		{key: 25, val: 205},
+		{key: 23, val: 207},
+		{key: 23, val: 209},
+		{key: 27, val: 207},
+	}
+
+	for _, v := range cases {
+		hashImplementation.Set(v.key, v.val)
+		got, ok := hashImplementation.Get(v.key)
+		if !ok || got != v.val {
+			t.Errorf("did not get expected value %d for key %d", v.val, v.key)
 		}
 	}
 
