@@ -11,5 +11,6 @@ func main() {
 	mm.Remove(25)
 	mm.Remove(23)
 	mm.Remove(25)
+	mm.Remove(27)
 
 }

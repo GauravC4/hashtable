@@ -26,3 +26,7 @@ func (bm *BuiltinMap) Get(key int) (int, bool) {
 func (bm *BuiltinMap) Remove(key int) {
 	delete(bm.cache, key)
 }
+
+func (bm *BuiltinMap) Size() int {
+	return len(bm.cache)
+}

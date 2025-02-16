@@ -11,12 +11,18 @@ get : 8.61 ns/op
 remove : 54.66 ns/op
 */
 
-// change this to my implementation
+/*
+mymap benchmark
+set : 137.6 ns/op
+get : 44.87 ns/op
+remove : 42.23 ns/op
+*/
+
 // var hashImplementation Hashable = BuiltinMapConstructor()
 var hashImplementation Hashable = MyMapConstructor()
 
 func TestSetGetRemove(t *testing.T) {
-	arr := getRandArr(10)
+	arr := getRandArr(100)
 
 	for _, v := range arr {
 		hashImplementation.Set(v, v)
@@ -30,9 +36,13 @@ func TestSetGetRemove(t *testing.T) {
 		}
 	}
 
+	//fmt.Printf("TestSetGetRemove size after set %d\n", hashImplementation.Size())
+
 	for _, v := range arr {
 		hashImplementation.Remove(v)
 	}
+
+	//fmt.Printf("TestSetGetRemove size after remove %d\n", hashImplementation.Size())
 
 	// test remove
 	for _, v := range arr {
