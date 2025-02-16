@@ -21,6 +21,11 @@ Below are the benchmark results comparing operations (`set`, `get`, and `remove`
 | **Get**   | 8.61               | 44.87             |
 | **Remove**| 54.66              | 42.23             |
 
+### System Configuration
+- **OS**: macOS (Darwin)
+- **Architecture**: ARM64
+- **CPU**: Apple M3 (8 cores used)
+
 ### Observations
 - **Set and Remove**: Custom implementation performs comparably to the inbuilt map.
 - **Get**: The custom implementation is ~5x slower than the inbuilt map, likely due to the lack of spatial locality. Open addressing might improve performance for this operation.
