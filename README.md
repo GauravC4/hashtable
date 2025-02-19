@@ -36,7 +36,7 @@ Checked golang runtime code for map and it uses something called swiss tables wh
 
 Clone the repo and run benchmark using 
 ```bash
-go test -bench=.
+go test -bench=. -benchtime=10000x
 ```
 
 main.go is empty, main_test.go is the root file.
