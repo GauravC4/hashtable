@@ -34,7 +34,7 @@ Below are the benchmark results comparing operations (`set`, `get`, and `remove`
 
 Update: It did not, open addressing made it worse maybe due to clustering of collissions. I am curious about quadratic probing function.
 
-Check golang runtime code for map and it uses something called swiss tables which does some bit manipulation magic to check for 8 or 16 chunks at once. https://abseil.io/about/design/swisstables
+Checked golang runtime code for map and it uses something called swiss tables which does some bit manipulation magic to check for 8 or 16 chunks at once. https://abseil.io/about/design/swisstables
 
 ## How to Run
 
