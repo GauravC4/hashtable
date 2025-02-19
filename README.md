@@ -32,7 +32,7 @@ Below are the benchmark results comparing operations (`set`, `get`, and `remove`
 - **Set and Remove**: Custom implementation performs comparably to the inbuilt map.
 - **Get**: The custom implementation is ~5x slower than the inbuilt map, likely due to the lack of spatial locality. Open addressing might improve performance for this operation. 
 
-Update: It did not, open addressing made it worse maybe due to clustering of collissions. I am curious about quadratic probing function.
+Update: It did not, open addressing made it worse maybe due to clustering of collissions because of linear probing. I am curious about quadratic probing function.
 
 Checked golang runtime code for map and it uses something called swiss tables which does some bit manipulation magic to check for 8 or 16 chunks at once. https://abseil.io/about/design/swisstables
 
