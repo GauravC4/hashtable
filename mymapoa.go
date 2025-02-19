@@ -65,6 +65,8 @@ func (mm *MyMapOA) Get(key int) (int, bool) {
 	for {
 		if !isBucketEmpty(mm.buckets[i]) && mm.buckets[i].key == key {
 			return mm.buckets[i].val, true
+		} else if mm.buckets[i] == nil {
+			return 0, false
 		}
 		i = (i + 1) % len(mm.buckets)
 		if i == bucketIdx {

@@ -6,27 +6,25 @@ import (
 
 /*
 inbuilt benchmark
-set : 94.16 ns/op
-get : 8.61 ns/op
-remove : 54.66 ns/op
-*/
+set : 105.2 ns/op
+get : 13.68 ns/op
+remove : 76.90 ns/op
 
-/*
 mymap benchmark chaining
-set : 137.6 ns/op
-get : 44.87 ns/op
-remove : 42.23 ns/op
-*/
+set : 116.7 ns/op
+get : 15.11 ns/op
+remove : 91.04 ns/op
 
-/*
 mymap benchmark open addressing linear probing
-set : 139.2 ns/op
-get : 1894.87 ns/op
-remove : 136.7 ns/op
+set : 118.2 ns/op
+get : 15.12 ns/op
+remove : 72.28 ns/op
 */
 
-// var hashImplementation Hashable = BuiltinMapConstructor()
-// var hashImplementation Hashable = MyMapConstructor()
+//var hashImplementation Hashable = BuiltinMapConstructor()
+
+//var hashImplementation Hashable = MyMapConstructor()
+
 var hashImplementation Hashable = MyMapOAConstructor()
 
 func TestSetGetRemove(t *testing.T) {
@@ -97,13 +95,13 @@ func BenchmarkSet(b *testing.B) {
 
 func BenchmarkGet(b *testing.B) {
 	n := b.N
-	arr := getRandArr(n * 2)
+	arr := getRandArr(n + n/10)
 	for i := 0; i < n; i++ {
 		hashImplementation.Set(arr[i], arr[i])
 	}
 
 	b.ResetTimer()
-	for i := 0; i < n*2; i++ {
+	for i := 0; i < n+n/10; i++ {
 		hashImplementation.Get(arr[i])
 	}
 }
