@@ -11,6 +11,7 @@ type MyMap struct {
 	used    int
 }
 
+// uses chaining for conflict resolution
 func MyMapConstructor() *MyMap {
 	var myMap = MyMap{
 		buckets: make([]*BucketNode, 2),

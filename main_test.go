@@ -12,14 +12,22 @@ remove : 54.66 ns/op
 */
 
 /*
-mymap benchmark
+mymap benchmark chaining
 set : 137.6 ns/op
 get : 44.87 ns/op
 remove : 42.23 ns/op
 */
 
+/*
+mymap benchmark open addressing linear probing
+set : 139.2 ns/op
+get : 1894.87 ns/op
+remove : 136.7 ns/op
+*/
+
 // var hashImplementation Hashable = BuiltinMapConstructor()
-var hashImplementation Hashable = MyMapConstructor()
+// var hashImplementation Hashable = MyMapConstructor()
+var hashImplementation Hashable = MyMapOAConstructor()
 
 func TestSetGetRemove(t *testing.T) {
 	arr := getRandArr(100)
@@ -55,6 +63,7 @@ func TestSetGetRemove(t *testing.T) {
 }
 
 func TestSetGet(t *testing.T) {
+	hashImplementation = MyMapOAConstructor()
 	cases := []struct {
 		key int
 		val int
