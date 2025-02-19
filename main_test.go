@@ -21,10 +21,13 @@ get : 15.12 ns/op
 remove : 72.28 ns/op
 */
 
+// uncomment for golang map implementation
 //var hashImplementation Hashable = BuiltinMapConstructor()
 
+// uncomment for custom map with chaining
 //var hashImplementation Hashable = MyMapConstructor()
 
+// uncomment for custom map with open addressing
 var hashImplementation Hashable = MyMapOAConstructor()
 
 func TestSetGetRemove(t *testing.T) {

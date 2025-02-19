@@ -28,7 +28,7 @@ Below are the benchmark results comparing operations (`set`, `get`, and `remove`
 - **CPU**: Apple M3 (8 cores used)
 
 ### Observations
-Micro-benchmarks like these are miss leading but this was just for me to have a performance metric to compare against. It will be interesting to see how a quadratic probing function performs reducing collission clustering due to linear probing.
+Micro-benchmarks like these are miss-leading but this was just for me to have a performance metric to compare against. It will be interesting to see how a quadratic probing function performs reducing collission clustering due to linear probing.
 
 Checked golang runtime code for map and it uses something called swiss tables which does some bit manipulation magic to check for 8 or 16 chunks at once. https://abseil.io/about/design/swisstables
 
@@ -38,3 +38,5 @@ Clone the repo and run benchmark using
 ```bash
 go test -bench=.
 ```
+
+main.go is empty, main_test.go is the root file.

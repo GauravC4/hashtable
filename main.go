@@ -1,5 +1,7 @@
 package main
 
+// go to main_test.go for actual code
+
 func main() {
 	mm := MyMapOAConstructor()
 	mm.Set(23, 203)
