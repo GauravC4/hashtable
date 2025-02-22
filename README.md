@@ -16,7 +16,7 @@ This is a toy project to understand internal implementation details of hashmap. 
 Below are the benchmark results comparing operations (`set`, `get`, and `remove`) of the custom implementation (`mymap`) and Golang's inbuilt `map` for 10k iterations:
 
 
-| Operation | Inbuilt Benchmark | MyMap (Chaining) | MyMap (Open Addressing Linear Probing) |
+| Operation | Inbuilt Map       | MyMap (Chaining) | MyMap (Open Addressing Linear Probing) |
 |-----------|-------------------|------------------|----------------------------------------|
 | Set       | 105.2 ns/op       | 116.7 ns/op      | 118.2 ns/op                            |
 | Get       | 13.68 ns/op       | 15.11 ns/op      | 15.12 ns/op                            |
